@@ -1,0 +1,7 @@
+node_modules/*
+public/*
+App.js
+index.js
+Header.jsx
+Main.jsx
+Card.jsx
