@@ -40,25 +40,41 @@ function App() {
 
   useEffect(() => {
     const pickedCard = (e) => {
-      setPickedCards(e.target.id)
+      const updatedPickedCards = [...pickedCards, e.target.id]
+      setPickedCards(updatedPickedCards)
       if (pickedCards.includes(e.target.id)) {
         console.log('game over')
-        setScore(score === 0)
-        setPickedCards(pickedCards = [])
+        setScore(0)
+        setPickedCards([])
+        console.log(pickedCards)
       } else {
         setScore(score + 1)
+        console.log(pickedCards)
       }
     }
     document.addEventListener("click", pickedCard)
+    return () => {
+      document.removeEventListener("click", pickedCard);
+    };
   })
 
   useEffect(() => {
-    document.title = `Your score is ${score}`
+    const randomCards = cards
+      .map(value => ({ value, sort: Math.random() }))
+      .sort((a, b) => a.sort - b.sort)
+      .map(({ value }) => value)
+    setCards(randomCards)
+  }, [score])
+
+  useEffect(() => {
+    if(score >= highScore) {
+      setHightScore(score)
+    }
   })
 
   return (
     <div className="App">
-      <Header />
+      <Header score={score} highScore={highScore}/>
       <Main cards={cards}/>
     </div>
   );
