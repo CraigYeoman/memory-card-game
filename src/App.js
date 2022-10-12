@@ -69,18 +69,14 @@ function App() {
 
   useEffect(() => {
     const pickedCard = (e) => {
-      console.log(e.target)
       if(e.target.className === 'card--pic') {
       const updatedPickedCards = [...pickedCards, e.target.id]
       setPickedCards(updatedPickedCards)
       if (pickedCards.includes(e.target.id)) {
-        console.log('game over')
         setScore(0)
         setPickedCards([])
-        console.log(e.target)
       } else {
         setScore(score + 1)
-        console.log(pickedCards)
       }
     }
   } 
