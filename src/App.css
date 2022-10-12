@@ -61,5 +61,6 @@ body {
 .card--container img {
   height: 140px;
   width: 140px;
-  margin-top: 10px
+  margin-top: 10px;
+  cursor:pointer;
 }
