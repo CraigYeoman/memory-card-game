@@ -1,11 +1,13 @@
 # Memory Card Game
 
-# Memory game using React
+## [Live Link](http://craigyeoman.github.io/memory-card-game)
 
-# User scores points for not picking the same square twice
+## Memory game using React
 
-# Score is reset if user picks twice
+```
+User scores points for not picking the same square twice
+Score is reset if user picks twice
+React useState and useEffect
+```
 
-# React useState and useEffect
-
-# Lord of the Rings theme for fun
+## Lord of the Rings theme for fun
