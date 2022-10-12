@@ -59,6 +59,7 @@ body {
 }
 
 .card--container img {
-  height: 150px;
-  width: 150px;
+  height: 140px;
+  width: 140px;
+  margin-top: 10px
 }
