@@ -1,37 +1,66 @@
 import './App.css';
 import Header from './components/Header'
 import Main from './components/Main'
-import Card from './components/Card'
 import React from 'react';
 import { useState, useEffect } from "react";
+import aragorn from './images/aragorn.jpg'
+import boromir from './images/boromir.jpeg'
+import gimli from './images/gimli.jpg'
+import legolas from './images/legolas.jpg'
+import gandalf from './images/gandalf.jpeg'
+import frodo from './images/frodo.jpeg'
+import sam from './images/sam.jpeg'
+import merry from './images/merry.jpeg'
+import pippin from './images/pippin.jpeg'
 
 function App() {
 
   const [cards, setCards] = useState([
     {
       id: 1,
-      name: "Card 1"
+      name: "Aragorn",
+      picture: aragorn
     },
     {
       id: 2,
-      name: "Card 2"
+      name: "Boromir",
+      picture: boromir
     },
     {
       id: 3,
-      name: "Card 3"
+      name: "Gimli",
+      picture: gimli
     },
     {
       id: 4,
-      name: "Card 4"
+      name: "Legolas",
+      picture: legolas
     },
     {
       id: 5,
-      name: "Card 5"
+      name: "Gandalf",
+      picture: gandalf
     },
     {
       id: 6,
-      name: "Card 6"
+      name: "Frodo",
+      picture: frodo
     },
+    {
+      id: 7,
+      name: "Sam",
+      picture: sam
+    },
+    {
+      id: 8,
+      name: "Merry",
+      picture: merry
+    },
+    {
+      id: 9,
+      name: "Pippin",
+      picture: pippin
+    }
   ])
 
   const [pickedCards, setPickedCards] = useState([])
@@ -40,18 +69,21 @@ function App() {
 
   useEffect(() => {
     const pickedCard = (e) => {
+      console.log(e.target)
+      if(e.target.className === 'card--pic') {
       const updatedPickedCards = [...pickedCards, e.target.id]
       setPickedCards(updatedPickedCards)
       if (pickedCards.includes(e.target.id)) {
         console.log('game over')
         setScore(0)
         setPickedCards([])
-        console.log(pickedCards)
+        console.log(e.target)
       } else {
         setScore(score + 1)
         console.log(pickedCards)
       }
     }
+  } 
     document.addEventListener("click", pickedCard)
     return () => {
       document.removeEventListener("click", pickedCard);

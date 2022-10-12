@@ -1,34 +1,64 @@
+@font-face {
+  font-family: lotr;
+  src: url(./images/RINGM___.TTF);
+}
+
+@font-face {
+  font-family: lotr2;
+  src: url(./images/anirm___.ttf);
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  background-color: black;
+}
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-
 .App-header {
   background-color: #282c34;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
+  color: rgb(238, 222, 0);
+  font-family: lotr;
+  gap: 20px;
+}
+
+.header--title {
+  font-size: 60px;
+}
+
+.header--container {
+  display: flex;
+  gap: 15px;
+}
+
+.header--score, .header--highScore {
   font-size: calc(10px + 2vmin);
-  color: white;
 }
 
 .main {
   display: grid;
-  grid-template-columns: repeat(3, 100px);
+  grid-template-columns: repeat(3, 200px);
   justify-content: center;
   gap: 15px;
   margin-top: 15px;
 }
 
 .card--container {
-  height: 75px;
-  width: 75px;
+  height: 200px;
+  width: 200px;
   background-color: #282c34;
   color: white;
+  font-family: lotr2;
+}
+
+.card--container img {
+  height: 150px;
+  width: 150px;
 }

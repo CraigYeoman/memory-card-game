@@ -5,7 +5,7 @@ const Card = ({cards}) => {
           id={card.id}
           className="card--container"
         >
-          <div className="card--pic"></div>
+          <img src={card.picture} className="card--pic" id={card.id}/>
           <div className="card--name">{card.name}</div>
         </div>
     )
